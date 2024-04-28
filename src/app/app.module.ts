@@ -8,6 +8,10 @@ import { BienvenidaComponent } from './components/inicio/bienvenida/bienvenida.c
 import { LoginComponent } from './components/inicio/login/login.component';
 import { RegisterComponent } from './components/inicio/register/register.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { CambiarPasswordComponent } from './components/dashboard/cambiar-password/cambiar-password.component';
+import { CuestionariosComponent } from './components/dashboard/cuestionarios/cuestionarios.component';
+import { NavbarComponent } from './components/dashboard/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +19,11 @@ import { ReactiveFormsModule } from '@angular/forms';
     InicioComponent,
     BienvenidaComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    DashboardComponent,
+    CambiarPasswordComponent,
+    CuestionariosComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
