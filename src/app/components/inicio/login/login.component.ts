@@ -9,6 +9,7 @@ import { Usuario } from 'src/app/models/usuario';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+  loading = false;
   login: FormGroup;
 
   constructor(private fb: FormBuilder, private toastr: ToastrService) {
@@ -23,6 +24,16 @@ export class LoginComponent {
       nombreUsuario: this.login.value.usuario,
       password: this.login.value.password
     }
+    this.loading = true;
+    setTimeout(() => {
+      // if (condition) {
+        
+      // } else {
+        
+      // }
+      this.loading = false;
+    }, 3000);
+
     this.toastr.success('Hello world!', 'Toastr fun!');
     console.log(usuario);
   }
