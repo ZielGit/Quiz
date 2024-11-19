@@ -20,12 +20,12 @@ export class LoginService {
     return this.http.post(this.myAppUrl + this.myApiUrl, usuario);
   }
 
-  setLocalStorage(data): void {
+  setLocalStorage(data: any): void {
     localStorage.setItem('nombreUsuario', data);
   }
 
   getNombreUsuario(): string {
-    return localStorage.getItem('nombreUsuario');
+    return localStorage.getItem('nombreUsuario') || '';
   }
 
   removeLocalStorage(): void {

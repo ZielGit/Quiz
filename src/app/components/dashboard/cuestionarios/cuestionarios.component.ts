@@ -7,7 +7,7 @@ import { LoginService } from 'src/app/services/login.service';
   styleUrls: ['./cuestionarios.component.css']
 })
 export class CuestionariosComponent implements OnInit {
-  nombreUsuario: string;
+  nombreUsuario?: string;
 
   constructor(private loginService: LoginService) { }
 
