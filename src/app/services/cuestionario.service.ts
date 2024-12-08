@@ -8,10 +8,14 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class CuestionarioService {
+  tituloCuestionario: string;
+  descripcionCuestionario: string;
   myAppUrl: string;
   myApiUrl: string;
 
   constructor(private http: HttpClient) {
+    this.tituloCuestionario = '';
+    this.descripcionCuestionario = '';
     this.myAppUrl = environment.endpoint;
     this.myApiUrl = '/api/Cuestionario';
   }
