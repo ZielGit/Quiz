@@ -8,8 +8,8 @@
     <div formArrayName="respuestas" *ngFor="let item of getRespuestas.controls; let i = index">
         <div class="input-group mb-3" [formGroupName]="i">
             <input type="text" class="form-control" placeholder="Respuesta {{ i + 1 }}" formControlName="descripcion">
-            <span class="input-group-text" id="basic-addon2">
-                <input type="radio" name="esCorrecta" (change)="setRespuestaValida(i)" [value]="1" formControlName="esCorrecta">
+            <span class="input-group-text">
+                <input type="radio" name="esCorrecta" (change)="setRespuestaValida(i)" [value]="i" formControlName="esCorrecta">
             </span>
             <span class="material-symbols-outlined delete-icon" (click)="eliminarRespuesta(i)">
                 delete

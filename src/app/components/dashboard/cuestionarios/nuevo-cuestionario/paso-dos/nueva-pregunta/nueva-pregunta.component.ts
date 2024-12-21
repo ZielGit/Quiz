@@ -57,12 +57,12 @@ export class NuevaPreguntaComponent {
 
   agregarPregunta(): void {
     const descripcionPregunta = this.nuevaPregunta.get('titulo')?.value;
-    const arrayRespuestas = this.getRespuestas.value as { descripcion: string; esCorrecta: number }[];
+    const arrayRespuestas = this.getRespuestas.value as { descripcion: string; esCorrecta: boolean }[];
     const arrayRta: Respuesta[] = [];
 
     arrayRespuestas.forEach((element, index) => {
       const respuesta: Respuesta = new Respuesta(element.descripcion, false);
-      if (index === element.esCorrecta) {
+      if (index === this.rtaCorrecta) {
         respuesta.esCorrecta = true;
       }
       arrayRta.push(respuesta);
@@ -74,6 +74,7 @@ export class NuevaPreguntaComponent {
   }
 
   reset(): void {
+    this.rtaCorrecta = 0;
     this.nuevaPregunta.reset();
     this.getRespuestas.clear();
     this.agregarRespuestasPorDefecto();
