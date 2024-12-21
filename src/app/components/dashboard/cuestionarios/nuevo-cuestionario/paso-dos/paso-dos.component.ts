@@ -25,4 +25,8 @@ export class PasoDosComponent {
   guardarPregunta(pregunta: Pregunta): void {
     this.listPreguntas.push(pregunta);
   }
+
+  eliminarPregunta(index: number): void {
+    this.listPreguntas.splice(index, 1);
+  }
 }
