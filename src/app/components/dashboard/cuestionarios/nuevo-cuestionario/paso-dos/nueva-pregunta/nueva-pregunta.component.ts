@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { Pregunta } from 'src/app/models/pregunta';
@@ -13,6 +13,7 @@ export class NuevaPreguntaComponent {
   nuevaPregunta: FormGroup;
   pregunta?: Pregunta;
   rtaCorrecta = 0;
+  @Output() enviarPregunta = new EventEmitter<Pregunta>();
 
   constructor(private fb: FormBuilder,
               private toastr: ToastrService) {
@@ -68,7 +69,7 @@ export class NuevaPreguntaComponent {
     });
 
     const pregunta: Pregunta = new Pregunta(descripcionPregunta, arrayRta);
-    console.log(pregunta);
+    this.enviarPregunta.emit(pregunta);
     this.reset();
   }
 
